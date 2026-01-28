@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -778,36 +777,491 @@
             text-decoration: none;
         }
 
-        /* Mobile Responsive */
+        /* Email Popup Overlay */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .popup-content {
+            background: var(--white);
+            max-width: 600px;
+            width: 100%;
+            border-radius: 12px;
+            position: relative;
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: transparent;
+            border: none;
+            font-size: 32px;
+            color: #999;
+            cursor: pointer;
+            line-height: 1;
+            padding: 5px 10px;
+            transition: color 0.3s;
+            z-index: 10;
+        }
+
+        .popup-close:hover {
+            color: var(--charcoal);
+        }
+
+        .popup-header {
+            background: linear-gradient(135deg, var(--sun-yellow) 0%, #d6a132 100%);
+            padding: 40px 30px 30px;
+            border-radius: 12px 12px 0 0;
+            text-align: center;
+        }
+
+        .popup-header h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 36px;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .popup-header p {
+            font-size: 20px;
+            color: var(--charcoal);
+            margin: 0;
+        }
+
+        .popup-body {
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .popup-offers {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .popup-offer {
+            background: var(--light-gray);
+            padding: 20px 25px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 200px;
+            border: 2px solid var(--sun-yellow);
+        }
+
+        .popup-offer-percent {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 48px;
+            color: var(--sun-yellow);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .popup-offer-text {
+            font-size: 16px;
+            color: var(--charcoal);
+            font-weight: 700;
+            font-family: 'Archivo', sans-serif;
+        }
+
+        .popup-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .popup-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 16px 20px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Archivo', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .popup-form input:focus {
+            outline: none;
+            border-color: var(--sun-yellow);
+        }
+
+        .popup-form button {
+            padding: 16px 35px;
+            background: var(--sun-yellow);
+            color: var(--charcoal);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .popup-form button:hover {
+            background: #d6a132;
+            transform: translateY(-2px);
+        }
+
+        .popup-disclaimer {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .popup-features {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .popup-feature {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .popup-feature::before {
+            content: "✓";
+            color: var(--green);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Mobile Responsive - OPTIMIZED FOR PHONE */
         @media (max-width: 768px) {
+            body {
+                font-size: 17px;
+            }
+
+            /* Hero Section - Mobile Optimized */
+            .hero {
+                padding: 40px 15px 50px;
+            }
+
+            .hero-eyebrow {
+                font-size: 12px;
+                margin-bottom: 15px;
+            }
+
             .hero h1 {
-                font-size: 36px;
+                font-size: 32px;
+                margin-bottom: 20px;
+                line-height: 1.1;
             }
 
             .hero-subhead {
-                font-size: 20px;
+                font-size: 18px;
+                margin-bottom: 12px;
+                line-height: 1.4;
             }
 
+            .hero-proof {
+                font-size: 16px;
+                margin-bottom: 25px;
+            }
+
+            /* All Sections - Mobile Padding */
+            .problem-section,
+            .fascination-section,
+            .solution-section,
+            .instructor-section,
+            .benefits-section,
+            .transformation-section,
+            .pricing-section,
+            .guarantee-section,
+            .curriculum-section,
+            .faq-section,
+            .final-cta {
+                padding: 50px 15px;
+            }
+
+            /* Section Titles - Mobile */
             .section-title {
-                font-size: 32px;
+                font-size: 28px;
+                margin-bottom: 20px;
+                line-height: 1.2;
             }
 
+            .problem-intro {
+                font-size: 19px;
+                margin-bottom: 25px;
+            }
+
+            /* CTAs - Larger for Mobile */
+            .cta-button-large {
+                padding: 20px 30px;
+                font-size: 18px;
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+
+            .header-cta {
+                padding: 14px 25px;
+                font-size: 15px;
+            }
+
+            /* Problem Section - Mobile */
+            .pain-story {
+                padding: 30px 20px;
+                margin: 30px 0;
+            }
+
+            .pain-story h3 {
+                font-size: 22px;
+                margin-bottom: 15px;
+            }
+
+            .pain-story p {
+                font-size: 17px;
+                line-height: 1.6;
+                margin-bottom: 12px;
+            }
+
+            .problem-list li {
+                padding: 18px 20px;
+                font-size: 17px;
+                margin-bottom: 12px;
+            }
+
+            /* Testimonials - Mobile */
+            .testimonial {
+                padding: 25px 20px;
+                margin: 30px 0;
+            }
+
+            .testimonial-content {
+                font-size: 18px;
+                line-height: 1.6;
+                margin-bottom: 15px;
+            }
+
+            .testimonial-author {
+                font-size: 15px;
+            }
+
+            /* Instructor Section - Mobile */
             .instructor-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 25px;
             }
 
-            .cta-button-large {
-                padding: 18px 35px;
+            .instructor-bio h3 {
+                font-size: 26px;
+                margin-bottom: 12px;
+            }
+
+            .instructor-bio p {
+                font-size: 17px;
+                line-height: 1.6;
+                margin-bottom: 15px;
+            }
+
+            .credentials {
+                padding: 20px;
+                margin-top: 20px;
+            }
+
+            .credentials li {
+                font-size: 16px;
+                padding: 6px 0;
+            }
+
+            /* Benefits Grid - Mobile */
+            .benefits-grid,
+            .solution-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .benefit-card,
+            .solution-card {
+                padding: 30px 25px;
+            }
+
+            .benefit-icon {
+                font-size: 42px;
+                margin-bottom: 15px;
+            }
+
+            .benefit-card h3,
+            .solution-card h3 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .benefit-card p,
+            .solution-card p {
+                font-size: 16px;
+            }
+
+            /* Transformation Section - Mobile */
+            .transformation-box {
+                padding: 35px 25px;
+                margin: 30px 0;
+            }
+
+            .transformation-box h3 {
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            .transformation-box p {
+                font-size: 18px;
+                line-height: 1.6;
+                margin-bottom: 15px;
+            }
+
+            .transformation-highlight {
+                padding: 20px;
+                margin-top: 25px;
                 font-size: 19px;
             }
 
+            /* Pricing Section - Mobile */
             .pricing-box {
-                padding: 35px 25px;
+                padding: 30px 20px;
+                margin: 30px 0;
             }
 
             .price {
-                font-size: 52px;
+                font-size: 56px;
+                margin: 15px 0;
+            }
+
+            .value-comparison {
+                padding: 20px;
+                margin-bottom: 25px;
+            }
+
+            .value-item {
+                font-size: 16px;
+                padding: 10px 0;
+            }
+
+            .included-list li {
+                padding: 12px 0;
+                font-size: 17px;
+                line-height: 1.5;
+            }
+
+            .trust-signals {
+                flex-direction: column;
+                gap: 15px;
+                font-size: 13px;
+            }
+
+            /* Guarantee Section - Mobile */
+            .guarantee-box {
+                padding: 35px 25px;
+                margin: 30px 0;
+            }
+
+            .guarantee-badge {
+                width: 100px;
+                height: 100px;
+                font-size: 28px;
+                margin-bottom: 20px;
+            }
+
+            .guarantee-box h3 {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            .guarantee-box p {
+                font-size: 18px;
+                line-height: 1.6;
+                margin-bottom: 12px;
+            }
+
+            /* Curriculum Grid - Mobile */
+            .curriculum-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .curriculum-item {
+                padding: 20px;
+            }
+
+            .curriculum-item h4 {
+                font-size: 17px;
+                margin-bottom: 5px;
+            }
+
+            .curriculum-item p {
+                font-size: 15px;
+            }
+
+            /* FAQ Section - Mobile */
+            .faq-item {
+                padding: 25px 20px;
+                margin-bottom: 15px;
+            }
+
+            .faq-item h4 {
+                font-size: 19px;
+                margin-bottom: 10px;
+            }
+
+            .faq-item p {
+                font-size: 17px;
+                line-height: 1.6;
+            }
+
+            /* Final CTA - Mobile */
+            .final-cta h2 {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+
+            .final-cta p {
+                font-size: 19px;
+                margin-bottom: 25px;
+            }
+
+            /* Sticky CTA Bar - Mobile Optimized */
+            .sticky-cta-bar {
+                padding: 12px 15px;
             }
 
             .sticky-cta-content {
@@ -816,12 +1270,136 @@
             }
 
             .sticky-cta-text {
-                font-size: 16px;
+                font-size: 15px;
                 text-align: center;
+                line-height: 1.3;
             }
 
-            .trust-bar-content {
-                gap: 20px;
+            .sticky-cta-button {
+                width: 100%;
+                padding: 15px 25px;
+                font-size: 17px;
+            }
+
+            /* Email Popup - Mobile Optimized */
+            .popup-overlay {
+                padding: 10px;
+                align-items: flex-start;
+                padding-top: 20px;
+            }
+
+            .popup-content {
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+
+            .popup-close {
+                top: 10px;
+                right: 10px;
+                font-size: 28px;
+                padding: 5px 12px;
+                background: rgba(255,255,255,0.9);
+                border-radius: 50%;
+            }
+
+            .popup-header {
+                padding: 35px 20px 25px;
+            }
+
+            .popup-header h2 {
+                font-size: 26px;
+                margin-bottom: 8px;
+            }
+
+            .popup-header p {
+                font-size: 17px;
+            }
+
+            .popup-body {
+                padding: 30px 20px;
+            }
+
+            .popup-offers {
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+
+            .popup-offer {
+                min-width: auto;
+                padding: 20px;
+            }
+
+            .popup-offer-percent {
+                font-size: 42px;
+                margin-bottom: 6px;
+            }
+
+            .popup-offer-text {
+                font-size: 15px;
+            }
+
+            .popup-form {
+                flex-direction: column;
+                gap: 12px;
+                margin-bottom: 15px;
+            }
+
+            .popup-form input,
+            .popup-form button {
+                min-width: auto;
+                width: 100%;
+                padding: 16px 20px;
+                font-size: 16px;
+            }
+
+            .popup-disclaimer {
+                font-size: 12px;
+                line-height: 1.4;
+            }
+
+            .popup-features {
+                flex-direction: column;
+                gap: 10px;
+                margin-top: 20px;
+                font-size: 13px;
+            }
+
+            /* Footer */
+            .footer {
+                padding: 30px 15px;
+            }
+
+            .footer p {
+                font-size: 14px;
+            }
+        }
+
+        /* Extra Small Phones (iPhone SE, etc) */
+        @media (max-width: 375px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .price {
+                font-size: 48px;
+            }
+
+            .cta-button-large {
+                font-size: 17px;
+                padding: 18px 25px;
+            }
+
+            .popup-header h2 {
+                font-size: 24px;
+            }
+
+            .popup-offer-percent {
+                font-size: 38px;
             }
         }
     </style>
@@ -836,34 +1414,7 @@
     </div>
 </div>
 
-<!-- Header -->
-<header class="header">
-    <div class="header-container">
-        <a href="#" class="logo">
-            SCHOOL OF TRADITIONAL SKILLS
-            <span class="logo-small">Learn from the Masters</span>
-        </a>
-        <a href="#purchase" class="header-cta">Enroll Now →</a>
-    </div>
-</header>
 
-<!-- Trust Bar - VERIFIED DATA ONLY -->
-<div class="trust-bar">
-    <div class="trust-bar-content">
-        <div class="trust-item">
-            <span class="trust-icon">✓</span>
-            <span>Join <strong>11,000+ Members</strong></span>
-        </div>
-        <div class="trust-item">
-            <span class="trust-icon">✓</span>
-            <span><strong>30-Day</strong> Money-Back Guarantee</span>
-        </div>
-        <div class="trust-item">
-            <span class="trust-icon">✓</span>
-            <span><strong>4.9/5</strong> App Store Rating</span>
-        </div>
-    </div>
-</div>
 
 <!-- Hero Section -->
 <section class="hero">
@@ -1298,6 +1849,52 @@
     </div>
 </footer>
 
+<!-- Email Popup Overlay -->
+<div class="popup-overlay" id="emailPopup">
+    <div class="popup-content">
+        <button class="popup-close" id="closePopup" aria-label="Close">&times;</button>
+        
+        <div class="popup-header">
+            <h2>Wait! Don't Miss This Special Offer!</h2>
+            <p>Get instant savings on your seed-starting journey</p>
+        </div>
+        
+        <div class="popup-body">
+            <div class="popup-offers">
+                <div class="popup-offer">
+                    <div class="popup-offer-percent">33% OFF</div>
+                    <div class="popup-offer-text">This Class</div>
+                </div>
+                <div class="popup-offer">
+                    <div class="popup-offer-percent">50% OFF</div>
+                    <div class="popup-offer-text">Sitewide Access</div>
+                </div>
+            </div>
+            
+            <form class="popup-form" id="popupEmailForm">
+                <input 
+                    type="email" 
+                    placeholder="Enter your email address..." 
+                    required 
+                    id="popupEmail"
+                    aria-label="Email address"
+                >
+                <button type="submit">Get My Discount →</button>
+            </form>
+            
+            <p class="popup-disclaimer">
+                Join 11,000+ members learning traditional skills. Unsubscribe anytime. No spam, ever.
+            </p>
+            
+            <div class="popup-features">
+                <div class="popup-feature">Instant Access</div>
+                <div class="popup-feature">30-Day Guarantee</div>
+                <div class="popup-feature">Cancel Anytime</div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
 // Sticky CTA Bar on Scroll
 window.addEventListener('scroll', function() {
@@ -1320,6 +1917,109 @@ function isElementInViewport(el) {
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
 }
+
+// Email Popup Functionality
+(function() {
+    var popup = document.getElementById('emailPopup');
+    var closeBtn = document.getElementById('closePopup');
+    var form = document.getElementById('popupEmailForm');
+    var hasShownPopup = sessionStorage.getItem('emailPopupShown');
+    var popupClosed = sessionStorage.getItem('emailPopupClosed');
+    
+    // Don't show if already shown or closed this session
+    if (hasShownPopup || popupClosed) {
+        return;
+    }
+    
+    // Show popup after 15 seconds
+    var timeoutId = setTimeout(function() {
+        showPopup();
+    }, 15000); // 15 seconds
+    
+    // Show popup on exit intent (mouse leaving top of page)
+    var exitIntentShown = false;
+    document.addEventListener('mouseleave', function(e) {
+        if (e.clientY < 50 && !exitIntentShown && !hasShownPopup && !popupClosed) {
+            exitIntentShown = true;
+            clearTimeout(timeoutId);
+            showPopup();
+        }
+    });
+    
+    // Show popup on 50% scroll
+    var scrollShown = false;
+    window.addEventListener('scroll', function() {
+        if (!scrollShown && !hasShownPopup && !popupClosed) {
+            var scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            if (scrollPercent > 50) {
+                scrollShown = true;
+                clearTimeout(timeoutId);
+                showPopup();
+            }
+        }
+    });
+    
+    function showPopup() {
+        popup.classList.add('active');
+        sessionStorage.setItem('emailPopupShown', 'true');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+    
+    function hidePopup() {
+        popup.classList.remove('active');
+        sessionStorage.setItem('emailPopupClosed', 'true');
+        document.body.style.overflow = ''; // Re-enable scrolling
+    }
+    
+    // Close button
+    closeBtn.addEventListener('click', function() {
+        hidePopup();
+    });
+    
+    // Close on overlay click
+    popup.addEventListener('click', function(e) {
+        if (e.target === popup) {
+            hidePopup();
+        }
+    });
+    
+    // Close on ESC key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && popup.classList.contains('active')) {
+            hidePopup();
+        }
+    });
+    
+    // Form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = document.getElementById('popupEmail').value;
+        
+        // Here you would integrate with your email service
+        // For now, we'll just redirect to the purchase page with discount
+        console.log('Email captured:', email);
+        
+        // Store email for later use
+        sessionStorage.setItem('discountEmail', email);
+        
+        // Close popup and scroll to purchase
+        hidePopup();
+        
+        // Optional: Show success message
+        alert('🎉 Success! Your 33% discount has been applied. Scroll down to claim your savings!');
+        
+        // Scroll to purchase section
+        document.getElementById('purchase').scrollIntoView({ behavior: 'smooth' });
+        
+        // TODO: Integrate with your email marketing service (Mailchimp, ConvertKit, etc.)
+        // Example:
+        // fetch('your-email-api-endpoint', {
+        //     method: 'POST',
+        //     body: JSON.stringify({ email: email }),
+        //     headers: { 'Content-Type': 'application/json' }
+        // });
+    });
+})();
 </script>
 
 </body>
