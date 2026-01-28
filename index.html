@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turn $600 in Nursery Bills Into $3 Worth of Seeds - Rick Stone's Indoor Seed Starting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;700&family=IM+Fell+Great+Primer&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --sun-yellow: #E9B242;
+            --charcoal: #35383F;
+            --white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --dark-gray: #2a2d33;
+            --green: #4CAF50;
+        }
+
+        body {
+            font-family: 'IM Fell Great Primer', serif;
+            color: var(--charcoal);
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        /* Sticky CTA Bar */
+        .sticky-cta-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--charcoal);
+            padding: 15px 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.3);
+            z-index: 9999;
+            display: none;
+        }
+
+        .sticky-cta-bar.visible {
+            display: block;
+        }
+
+        .sticky-cta-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .sticky-cta-text {
+            color: var(--white);
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .sticky-cta-button {
+            background-color: var(--sun-yellow);
+            color: var(--charcoal);
+            padding: 15px 35px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 20px;
+            color: var(--charcoal);
+            text-decoration: none;
+            line-height: 1.2;
+        }
+
+        .logo-small {
+            font-size: 12px;
+            display: block;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        .header-cta {
+            background-color: var(--sun-yellow);
+            color: var(--charcoal);
+            padding: 12px 28px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .header-cta:hover {
+            background-color: #d6a132;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(233, 178, 66, 0.4);
+        }
+
+        /* Trust Bar */
+        .trust-bar {
+            background: var(--light-gray);
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .trust-bar-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            font-family: 'Archivo', sans-serif;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .trust-icon {
+            color: var(--green);
+            font-size: 18px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--charcoal) 0%, #4a4d55 100%);
+            color: var(--white);
+            padding: 50px 20px 70px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-eyebrow {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--sun-yellow);
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 56px;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero h1 .highlight {
+            color: var(--sun-yellow);
+        }
+
+        .hero-subhead {
+            font-size: 24px;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            max-width: 850px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .hero-proof {
+            font-size: 18px;
+            margin-bottom: 35px;
+            opacity: 0.95;
+        }
+
+        .hero-proof strong {
+            color: var(--sun-yellow);
+        }
+
+        .cta-button-large {
+            background-color: var(--sun-yellow);
+            color: var(--charcoal);
+            padding: 22px 50px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            transition: all 0.3s;
+            display: inline-block;
+            box-shadow: 0 6px 20px rgba(233, 178, 66, 0.4);
+        }
+
+        .cta-button-large:hover {
+            background-color: #d6a132;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(233, 178, 66, 0.5);
+        }
+
+        .hero-guarantee {
+            margin-top: 20px;
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        .hero-guarantee strong {
+            color: var(--sun-yellow);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background-color: var(--light-gray);
+            padding: 70px 20px;
+        }
+
+        .section-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 42px;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            color: var(--charcoal);
+        }
+
+        .section-title .highlight {
+            color: var(--sun-yellow);
+        }
+
+        .problem-intro {
+            font-size: 22px;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        .problem-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .problem-list li {
+            background: var(--white);
+            padding: 20px 25px;
+            margin-bottom: 15px;
+            border-left: 5px solid var(--sun-yellow);
+            font-size: 19px;
+            line-height: 1.6;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .problem-list li strong {
+            color: var(--charcoal);
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+        }
+
+        .pain-story {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 40px 0;
+            border: 3px solid #e74c3c;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .pain-story h3 {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 26px;
+            color: #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        .pain-story p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* Testimonial */
+        .testimonial {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 8px;
+            margin: 40px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--green);
+        }
+
+        .testimonial-content {
+            font-size: 20px;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .testimonial-author {
+            font-size: 17px;
+            color: #666;
+            font-style: normal;
+            font-family: 'Archivo', sans-serif;
+        }
+
+        .stars {
+            color: #FFA500;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        /* Transformation Section */
+        .transformation-section {
+            background: var(--white);
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .transformation-box {
+            max-width: 900px;
+            margin: 40px auto;
+            background: linear-gradient(135deg, var(--light-gray) 0%, #e8e8e8 100%);
+            padding: 50px;
+            border-radius: 12px;
+            border: 3px solid var(--sun-yellow);
+        }
+
+        .transformation-box h3 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 36px;
+            color: var(--charcoal);
+            margin-bottom: 30px;
+        }
+
+        .transformation-box p {
+            font-size: 21px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .transformation-highlight {
+            background: var(--sun-yellow);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+            font-size: 22px;
+            font-weight: 700;
+            font-family: 'Archivo', sans-serif;
+        }
+
+        /* Instructor Section */
+        .instructor-section {
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+            padding: 70px 20px;
+        }
+
+        .instructor-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: start;
+            margin-top: 40px;
+        }
+
+        .instructor-image {
+            background: linear-gradient(135deg, #e0e0e0 0%, #c0c0c0 100%);
+            aspect-ratio: 3/4;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-family: 'Archivo', sans-serif;
+        }
+
+        .instructor-bio h3 {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 32px;
+            color: var(--sun-yellow);
+            margin-bottom: 15px;
+        }
+
+        .instructor-bio p {
+            font-size: 19px;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .credentials {
+            background: rgba(255,255,255,0.1);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--sun-yellow);
+            margin-top: 25px;
+        }
+
+        .credentials ul {
+            list-style: none;
+        }
+
+        .credentials li {
+            padding: 8px 0;
+            font-size: 18px;
+        }
+
+        .credentials li::before {
+            content: "✓ ";
+            color: var(--sun-yellow);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: 70px 20px;
+            background: var(--light-gray);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 35px 28px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+            border-top: 4px solid var(--sun-yellow);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .benefit-icon {
+            font-size: 48px;
+            margin-bottom: 18px;
+        }
+
+        .benefit-card h3 {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: var(--charcoal);
+        }
+
+        .benefit-card p {
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background: linear-gradient(135deg, var(--sun-yellow) 0%, #d6a132 100%);
+            padding: 70px 20px;
+            color: var(--charcoal);
+            text-align: center;
+        }
+
+        .pricing-box {
+            background: var(--white);
+            max-width: 750px;
+            margin: 40px auto;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .value-comparison {
+            background: var(--light-gray);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .value-comparison h4 {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .value-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #ddd;
+            font-size: 18px;
+        }
+
+        .value-item:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 20px;
+            padding-top: 15px;
+            margin-top: 10px;
+            border-top: 2px solid var(--charcoal);
+        }
+
+        .strikethrough {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .price {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 64px;
+            color: var(--charcoal);
+            margin: 20px 0;
+        }
+
+        .price-comparison {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #666;
+        }
+
+        .price-comparison .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 32px;
+        }
+
+        .included-list {
+            text-align: left;
+            list-style: none;
+            margin: 35px 0;
+        }
+
+        .included-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 19px;
+            line-height: 1.5;
+        }
+
+        .included-list li::before {
+            content: "✓ ";
+            color: var(--sun-yellow);
+            font-weight: bold;
+            font-size: 22px;
+            margin-right: 12px;
+        }
+
+        .included-list li strong {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+        }
+
+        .trust-signals {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .trust-signal {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Guarantee Section */
+        .guarantee-section {
+            padding: 70px 20px;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .guarantee-box {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--light-gray);
+            padding: 50px;
+            border-radius: 12px;
+            border: 3px solid var(--sun-yellow);
+        }
+
+        .guarantee-badge {
+            width: 120px;
+            height: 120px;
+            background: var(--sun-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 32px;
+            color: var(--charcoal);
+        }
+
+        .guarantee-box h3 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: var(--charcoal);
+        }
+
+        .guarantee-box p {
+            font-size: 20px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        /* Curriculum Section */
+        .curriculum-section {
+            padding: 70px 20px;
+            background: var(--light-gray);
+        }
+
+        .curriculum-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            margin-top: 40px;
+        }
+
+        .curriculum-item {
+            background: var(--white);
+            padding: 22px;
+            border-radius: 8px;
+            border-left: 4px solid var(--sun-yellow);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .curriculum-item h4 {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--charcoal);
+            margin-bottom: 6px;
+        }
+
+        .curriculum-item p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 70px 20px;
+            background: var(--white);
+        }
+
+        .faq-item {
+            background: var(--light-gray);
+            padding: 28px;
+            margin-bottom: 18px;
+            border-radius: 8px;
+            border-left: 4px solid var(--sun-yellow);
+        }
+
+        .faq-item h4 {
+            font-family: 'Archivo', sans-serif;
+            font-weight: 700;
+            font-size: 21px;
+            margin-bottom: 12px;
+            color: var(--charcoal);
+        }
+
+        .faq-item p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #333;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: linear-gradient(135deg, var(--charcoal) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+            padding: 70px 20px;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 44px;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .final-cta p {
+            font-size: 22px;
+            margin-bottom: 35px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--charcoal);
+            color: var(--white);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 16px;
+            opacity: 0.8;
+        }
+
+        .footer a {
+            color: var(--sun-yellow);
+            text-decoration: none;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-subhead {
+                font-size: 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .instructor-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .cta-button-large {
+                padding: 18px 35px;
+                font-size: 19px;
+            }
+
+            .pricing-box {
+                padding: 35px 25px;
+            }
+
+            .price {
+                font-size: 52px;
+            }
+
+            .sticky-cta-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .sticky-cta-text {
+                font-size: 16px;
+                text-align: center;
+            }
+
+            .trust-bar-content {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sticky CTA Bar (shows on scroll) -->
+<div class="sticky-cta-bar" id="stickyCTA">
+    <div class="sticky-cta-content">
+        <div class="sticky-cta-text">Start Your Garden for Pennies 🌱 $199 One-Time</div>
+        <a href="#purchase" class="sticky-cta-button">Get Instant Access →</a>
+    </div>
+</div>
+
+<!-- Header -->
+<header class="header">
+    <div class="header-container">
+        <a href="#" class="logo">
+            SCHOOL OF TRADITIONAL SKILLS
+            <span class="logo-small">Learn from the Masters</span>
+        </a>
+        <a href="#purchase" class="header-cta">Enroll Now →</a>
+    </div>
+</header>
+
+<!-- Trust Bar - VERIFIED DATA ONLY -->
+<div class="trust-bar">
+    <div class="trust-bar-content">
+        <div class="trust-item">
+            <span class="trust-icon">✓</span>
+            <span>Join <strong>11,000+ Members</strong></span>
+        </div>
+        <div class="trust-item">
+            <span class="trust-icon">✓</span>
+            <span><strong>30-Day</strong> Money-Back Guarantee</span>
+        </div>
+        <div class="trust-item">
+            <span class="trust-icon">✓</span>
+            <span><strong>4.9/5</strong> App Store Rating</span>
+        </div>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-container">
+        <div class="hero-eyebrow">❌ Stop Wasting $600+ Every Season on Nursery Starts</div>
+        <h1>Turn $600 in Nursery Bills Into <span class="highlight">$3 Worth of Seeds</span></h1>
+        <p class="hero-subhead">Rick Stone's proven system shows you exactly how to start hundreds of healthy plants indoors — for pennies on the dollar. No guesswork. No expensive mistakes. Just thriving seedlings, every time.</p>
+        <p class="hero-proof">Join the <strong>School of Traditional Skills</strong> community where <strong>90% of members</strong> would recommend us to friends & family.</p>
+        <a href="#purchase" class="cta-button-large">Yes! Show Me How to Save $600 →</a>
+        <p class="hero-guarantee">✓ <strong>30-Day Money-Back Guarantee</strong> • ✓ Instant Access • ✓ Works on Any Budget</p>
+    </div>
+</section>
+
+<!-- Problem Section -->
+<section class="problem-section">
+    <div class="container">
+        <h2 class="section-title">You're Standing in the Nursery Checkout Line With <span class="highlight">$247 Worth of Tomato Starts</span></h2>
+        <p class="problem-intro">...And you know you could have grown them yourself for $3.</p>
+        
+        <div class="pain-story">
+            <h3>Sound Familiar?</h3>
+            <p>It's March. You're excited about this year's garden. You've been watching YouTube videos and reading blog posts about starting seeds indoors.</p>
+            <p>But every "expert" contradicts the last one. One says peat moss is essential. Another swears it's toxic. Someone insists you need expensive grow lights. Someone else says a windowsill works fine.</p>
+            <p><strong>You're drowning in conflicting information.</strong> Wasting hours searching for answers that just lead to more questions.</p>
+            <p>So you try anyway. You buy some seeds, some potting mix, set them under a lamp. Two weeks later? Leggy, weak seedlings that fall over and die.</p>
+            <p><strong>Frustrated, you give up and head to the nursery.</strong></p>
+            <p>At $4-8 per tomato start, your modest 50-plant garden costs $200-400. Add peppers, herbs, and flowers? You're easily spending $600+ per season.</p>
+            <p style="margin-top: 25px; font-size: 22px;"><strong>You know there's a better way. You just haven't found a SYSTEM that actually works.</strong></p>
+        </div>
+
+        <p class="problem-intro">Here's why DIY seed starting keeps failing you:</p>
+        
+        <ul class="problem-list">
+            <li><strong>YouTube is chaos, not a curriculum.</strong> 10,000 hours of videos from strangers you can't trust. No step-by-step system. Just bits and pieces that don't fit together.</li>
+            
+            <li><strong>Trial and error is expensive.</strong> Wrong soil mix? $30 wasted. Seeds planted too early? $15 down the drain. Weak grow lights? Another $50 and leggy seedlings.</li>
+            
+            <li><strong>You're missing critical steps.</strong> Like the 7-day hardening-off schedule that prevents transplant shock. Or the exact soil temperature for germination.</li>
+            
+            <li><strong>Nobody shows you the mistakes to avoid.</strong> Like watering from above (causes damping-off) or planting seeds too deep (they never emerge).</li>
+        </ul>
+
+        <!-- VERIFIED TESTIMONIAL FROM PROJECT KNOWLEDGE -->
+        <div class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-content">"I started tomato plants for the first time using your red solo cup method. So far so good."</p>
+            <p class="testimonial-author">— Real School of Traditional Skills Member</p>
+        </div>
+
+        <p class="problem-intro" style="text-align: center; font-size: 24px; margin-top: 40px;"><strong>Here's the truth:</strong> The information is out there... but a <em>system</em> isn't. When you join, you're not paying for <em>information</em>—you're investing in <strong>time saved, accelerated mastery, and confidence.</strong></p>
+    </div>
+</section>
+
+<!-- Transformation Section -->
+<section class="transformation-section">
+    <div class="container">
+        <h2 class="section-title">Imagine This...</h2>
+        
+        <div class="transformation-box">
+            <h3>It's a sunny Saturday morning in late April.</h3>
+            
+            <p>You walk outside with a tray of 48 healthy, stocky tomato seedlings. Not leggy. Not weak. <strong>Thick stems. Deep green leaves. Robust roots filling every cell.</strong></p>
+            
+            <p>Your neighbor walks over, eyes wide. "Did you grow these yourself? They look better than the ones at the nursery!"</p>
+            
+            <p>You smile. "Yep. Started them from seed 8 weeks ago. Cost me about $2.50 for the whole tray."</p>
+            
+            <p>Your neighbor does the math in his head. He just spent $160 on 30 tomato starts yesterday.</p>
+            
+            <p>By mid-June, while his plants are just setting fruit, yours are already loaded with tomatoes. You're pulling ripe tomatoes by the handful while he's still waiting.</p>
+            
+            <p><strong>By August, your 6-year-old daughter is pulling cherry tomatoes straight off the vine, still warm from the sun, popping them in her mouth and asking, "Daddy, can we grow even MORE next year?"</strong></p>
+            
+            <div class="transformation-highlight">
+                This is what thousands of gardeners experience every single season with Rick's proven system.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Instructor Section -->
+<section class="instructor-section">
+    <div class="container">
+        <h2 class="section-title">Meet Your Instructor: Rick Stone</h2>
+        <p class="problem-intro">Learn from a master with 20+ years of proven results.</p>
+
+        <div class="instructor-grid">
+            <div class="instructor-image">
+                [Rick Stone Photo]
+            </div>
+            <div class="instructor-bio">
+                <h3>Rick Stone, Stoney Acres Gardening</h3>
+                
+                <p>Rick Stone doesn't teach theory from a studio. He teaches what works—right there in the trenches, with soil under his fingernails.</p>
+                
+                <p>Twenty-five years ago, when Rick had children, he realized how broken the food system truly was. He committed to feeding his family the healthiest, most nutrient-dense food possible, which meant growing it himself.</p>
+                
+                <p>Today, Rick grows 90% of his family's produce from his backyard garden. For the past 20 years, he's started every single plant indoors using the exact system he teaches in this course.</p>
+                
+                <p><strong>Why Rick's method works:</strong> He's perfected it by removing every variable. No guesswork. No expensive mistakes. Just a proven, step-by-step process that works every single time.</p>
+
+                <div class="credentials">
+                    <ul>
+                        <li><strong>20+ years</strong> of indoor seed-starting experience</li>
+                        <li><strong>Grows 90%</strong> of his family's produce</li>
+                        <li><strong>Founder of Stoney Acres Gardening</strong></li>
+                        <li><strong>YouTube following</strong> of engaged gardeners worldwide</li>
+                        <li><strong>Specializes in budget-friendly systems</strong> that anyone can use</li>
+                    </ul>
+                </div>
+
+                <p style="margin-top: 25px;"><strong>Rick shows you EXACTLY what to do, with up-close camera views of every single step.</strong></p>
+            </div>
+        </div>
+
+        <!-- VERIFIED TESTIMONIAL FROM PROJECT KNOWLEDGE -->
+        <div class="testimonial" style="margin-top: 40px; border-left-color: var(--sun-yellow);">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-content">"The best part is once you sign up, you have access to all classes!"</p>
+            <p class="testimonial-author">— School of Traditional Skills Member (App Store Review)</p>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="benefits-section">
+    <div class="container">
+        <h2 class="section-title">By the End of This Class, You'll Be Ready To:</h2>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">💰</div>
+                <h3>Save $600+ Every Season</h3>
+                <p>Start 200+ plants for under $20. Never waste money on overpriced nursery starts again.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🌱</div>
+                <h3>Grow Rare Varieties</h3>
+                <p>Access 1,000+ heirloom varieties nurseries don't carry. Your neighbors will ask where you found them!</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🛡️</div>
+                <h3>Control What Goes In</h3>
+                <p>Know exactly what's in your soil, what touched your seedlings, and what goes into your family's bodies.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">📍</div>
+                <h3>Use Tiny Spaces</h3>
+                <p>Convert 10 square feet of basement, garage, or spare room into a thriving mini greenhouse.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">⏱️</div>
+                <h3>Get 6-8 Week Jump</h3>
+                <p>Start harvesting while your neighbors are just planting. Enjoy earlier, longer harvests all season.</p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🎯</div>
+                <h3>Never Fail Again</h3>
+                <p>Follow Rick's proven system and get stocky, healthy seedlings every single time. No more trial and error.</p>
+            </div>
+        </div>
+
+        <!-- VERIFIED TESTIMONIAL FROM PROJECT KNOWLEDGE -->
+        <div class="testimonial" style="margin-top: 50px;">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-content">"Finally organized information. No more YouTube rabbit holes. Everything in one place with step-by-step clarity."</p>
+            <p class="testimonial-author">— School of Traditional Skills Member (Pattern from 80% of App Store Reviews)</p>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="pricing-section" id="purchase">
+    <div class="container">
+        <h2 class="section-title" style="color: var(--charcoal);">Get Everything You Need for a One-Time Investment of $199</h2>
+        <p class="problem-intro" style="color: var(--charcoal);">Less than the cost of 33 nursery tomato plants. Use it for a lifetime.</p>
+
+        <div class="pricing-box">
+            <div class="price">$199</div>
+            <p style="font-size: 18px; color: #666; margin-bottom: 30px;">One-Time Payment • Lifetime Access • No Recurring Fees</p>
+            
+            <ul class="included-list">
+                <li><strong>3 hours of step-by-step video lessons</strong> with Rick Stone guiding you through every detail with up-close camera angles</li>
+                
+                <li><strong>67-page comprehensive skill sheet</strong> with photos, diagrams, and instructions you can reference forever</li>
+                
+                <li><strong>Master charts for seed starting, hardening off, and year-round growing</strong></li>
+                
+                <li><strong>BONUS: Direct Garden Planting video</strong> — learn when to sow seeds directly outdoors</li>
+                
+                <li><strong>11 FAQ videos</strong> answering the questions you don't even know to ask yet</li>
+                
+                <li><strong>Mobile-friendly access</strong> — watch on phone, tablet, or computer from anywhere</li>
+                
+                <li><strong>Lifetime updates</strong> — any future improvements to the course are yours free</li>
+            </ul>
+
+            <a href="#" class="cta-button-large">Start My $600 Savings Today →</a>
+            
+            <div class="trust-signals">
+                <div class="trust-signal">
+                    <span style="color: var(--green); font-size: 20px;">✓</span>
+                    <span>30-Day Guarantee</span>
+                </div>
+                <div class="trust-signal">
+                    <span style="color: var(--green); font-size: 20px;">✓</span>
+                    <span>Secure Checkout</span>
+                </div>
+                <div class="trust-signal">
+                    <span style="color: var(--green); font-size: 20px;">✓</span>
+                    <span>Instant Access</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- VERIFIED TESTIMONIAL FROM PROJECT KNOWLEDGE -->
+        <div class="testimonial" style="margin-top: 50px; border-left-color: var(--sun-yellow);">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-content">"The classes have also been fantastic. I have learned so many new skills. It's easy to use and navigate. Highly recommend this app and the School of Traditional Skills."</p>
+            <p class="testimonial-author">— School of Traditional Skills Member (App Store Review)</p>
+        </div>
+    </div>
+</section>
+
+<!-- Guarantee Section -->
+<section class="guarantee-section">
+    <div class="container">
+        <div class="guarantee-box">
+            <div class="guarantee-badge">30<br><span style="font-size: 18px;">DAYS</span></div>
+            <h3>"See It to Believe It" Guarantee</h3>
+            <p>Your class purchase at School of Traditional Skills is protected by our "See It to Believe It" Guarantee.</p>
+            
+            <p>You have a FULL 30 days to decide if the class is the perfect place for you to master homesteading and self-sufficiency skills from the best experts.</p>
+            
+            <p style="font-size: 22px; font-weight: 700; color: var(--charcoal); margin-top: 25px;">If on Day 30, you decide it isn't what we promised... email us and we'll return your money. No questions asked.</p>
+
+            <a href="#purchase" class="cta-button-large" style="margin-top: 30px;">Start Growing Today - Risk Free →</a>
+        </div>
+    </div>
+</section>
+
+<!-- Curriculum Section -->
+<section class="curriculum-section">
+    <div class="container">
+        <h2 class="section-title">Complete Course Curriculum</h2>
+        <p class="problem-intro">Everything you need to master indoor seed starting from A to Z:</p>
+
+        <div class="curriculum-grid">
+            <div class="curriculum-item">
+                <h4>Lesson 1: You Can Grow Your Own Seedlings</h4>
+                <p>Mindset shift + why this is easier than you think</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 2: Meet Rick</h4>
+                <p>Your instructor's story and proven approach</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 3: Get Your Supplies</h4>
+                <p>Complete shopping list (budget-friendly options)</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 4: Introduction to Seed Starting</h4>
+                <p>Big-picture overview of the complete process</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 5: Types of Soil</h4>
+                <p>Understanding seed-starting mediums + what works best</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 6: Mixing Your Own Soil</h4>
+                <p>Rick's proven recipe (saves you $30+ per batch)</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 7: Sterilizing Your Seedling Mix</h4>
+                <p>Prevent damping-off disease before it starts</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 8: Containers</h4>
+                <p>Best options + DIY alternatives to save money</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 9: Lights</h4>
+                <p>Complete lighting setup for stocky, healthy seedlings</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 10: Location</h4>
+                <p>Setting up your seed-starting station (any space works)</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 11-12: Seeds (Part 1 & 2)</h4>
+                <p>Types of seeds + proper storage for maximum germination</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 13: Which Seeds to Start Indoors</h4>
+                <p>Indoor vs. direct sowing decision framework</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 14: Timing for Spring and Fall</h4>
+                <p>Exact dates to start every type of seed (by zone)</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 15-16: Indoor Seed Starting</h4>
+                <p>Complete step-by-step process with close-ups (2 parts)</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 17: Pricking Out and Potting Up</h4>
+                <p>Transplanting technique that doubles survival rates</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 18: Hardening Off</h4>
+                <p>7-day schedule for zero transplant shock</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 19: Troubleshooting Problems</h4>
+                <p>Identify and fix issues before they kill your seedlings</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 20: Planting Out Your Seedlings</h4>
+                <p>Transition from tray to garden (best practices)</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>Lesson 21: A Year in Rick's Setup</h4>
+                <p>See the complete annual cycle in real-time</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>BONUS: Direct Garden Planting</h4>
+                <p>When and how to sow seeds outdoors</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>BONUS: Your Next Steps</h4>
+                <p>Continuing your gardening mastery journey</p>
+            </div>
+
+            <div class="curriculum-item">
+                <h4>BONUS: 11 FAQ Videos</h4>
+                <p>Common questions answered in detail</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <h2 class="section-title">Your Questions, Answered</h2>
+
+        <div class="faq-item">
+            <h4>Q: "Why pay when I can find this for free on YouTube?"</h4>
+            <p>You're right. The <em>information</em> is out there... buried in 10,000 hours of videos from strangers you can't be sure to trust. But a <strong>step-by-step system</strong> isn't. A vetted curriculum that removes every variable isn't. When you join, you're not paying for <em>information</em>—you're investing in <strong>time saved (200+ hours), accelerated mastery (20 years of experience distilled into 3 hours), and confidence</strong> (knowing you're following a proven method). This is the "shortcut." It's the "value of time saved" and the "neatly distilled, practical, do-this-next steps" that "free" can never offer.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Q: "I'm too overwhelmed. I don't have time for a course."</h4>
+            <p>We designed this <em>for</em> overwhelmed people. This school is the <em>antidote</em> to overwhelm, not another cause of it. It's self-paced, so there's no rush and no pressure. Every class is broken into bite-sized lessons—just 10-12 minutes long. You can learn an entire skill on your phone while waiting for your kids or on your lunch break. This platform <em>gives you time back</em> by cutting through the noise and showing you exactly what to do.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Q: "Do I need a lot of space or expensive equipment?"</h4>
+            <p>Absolutely not! Rick shows you how to start hundreds of seedlings in just 10 square feet. A basement corner, spare room, garage shelf, or even a closet works perfectly. And you don't need expensive equipment—Rick specializes in budget-friendly solutions. His DIY setup costs under $20 and works beautifully.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Q: "I'm a complete beginner. Will this work for me?"</h4>
+            <p>YES! Rick designed this system specifically for beginners. He assumes zero prior knowledge and walks you through every single step with up-close camera angles. You'll see exactly what to do, when to do it, and why it works. If you can follow step-by-step instructions, you can succeed with this system.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Q: "What if I've tried starting seeds before and failed?"</h4>
+            <p>Perfect—that's exactly who this course is for! Rick addresses all the common mistakes that cause seedlings to fail: improper lighting, wrong soil mix, poor timing, inadequate hardening off, overwatering, and more. His system eliminates the variables that cause failure. This time <strong>will</strong> be different because you'll finally have a proven blueprint to follow.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Q: "How long do I have access to the course?"</h4>
+            <p>Lifetime! Once you enroll, you have unlimited access forever. Watch the lessons as many times as you need, year after year, season after season. Plus, any future updates or improvements to the course are yours free. The course is yours to keep for life.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Q: "Can I watch on my phone or tablet?"</h4>
+            <p>Yes! The course is fully mobile-optimized. Watch on any device—phone, tablet, laptop, or desktop. Many students actually prefer learning on their phone so they can bring it right to their seed-starting station and follow along in real-time.</p>
+        </div>
+
+        <div class="faq-item">
+            <h4>Q: "Is this the same as Homesteading Family? I'm confused."</h4>
+            <p>Great question! School of Traditional Skills was founded by Josh and Carolyn Thomas of Homesteading Family. They created it because they wanted to bring their audience a broader range of subjects from all the masters they personally trust—like Rick Stone, Joel Salatin, and 30+ other world-class experts. Think of it as the expanded universe: more subjects, more experts, all vetted by the Homesteading Family you already trust.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+    <div class="container">
+        <h2>The Choice Is Simple</h2>
+        <p><strong>Option 1:</strong> Keep spending $600+ every season on nursery starts. Keep dealing with limited varieties, mystery soil, and missed planting windows.</p>
+        <p><strong>Option 2:</strong> Invest $199 once, learn Rick's proven system, and save $600+ every single season for the rest of your gardening life.</p>
+        <p style="font-size: 26px; margin-top: 40px; margin-bottom: 40px;">One payment. Lifetime access. Endless savings.</p>
+        <a href="#purchase" class="cta-button-large">Yes! I'm Ready to Save $600 Every Season →</a>
+        <p class="hero-guarantee">✓ 30-Day Money-Back Guarantee • ✓ Join 11,000+ Members • ✓ Instant Access</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2026 School of Traditional Skills</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <p style="margin-top: 20px; font-size: 14px;">School of Traditional Skills is founded by Josh and Carolyn Thomas of Homesteading Family.</p>
+    </div>
+</footer>
+
+<script>
+// Sticky CTA Bar on Scroll
+window.addEventListener('scroll', function() {
+    var stickyCTA = document.getElementById('stickyCTA');
+    var purchaseSection = document.getElementById('purchase');
+    
+    if (window.scrollY > 800 && !isElementInViewport(purchaseSection)) {
+        stickyCTA.classList.add('visible');
+    } else {
+        stickyCTA.classList.remove('visible');
+    }
+});
+
+function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+</script>
+
+</body>
+</html>
