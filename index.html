@@ -1410,7 +1410,7 @@
 <div class="sticky-cta-bar" id="stickyCTA">
     <div class="sticky-cta-content">
         <div class="sticky-cta-text">Start Your Garden for Pennies 🌱 $199 One-Time</div>
-        <a href="#purchase" class="sticky-cta-button">Get Instant Access →</a>
+        <a href="#" class="sticky-cta-button popup-trigger">Get Instant Access →</a>
     </div>
 </div>
 
@@ -1423,7 +1423,7 @@
         <h1>Turn $600 in Nursery Bills Into <span class="highlight">$3 Worth of Seeds</span></h1>
         <p class="hero-subhead">Rick Stone's proven system shows you exactly how to start hundreds of healthy plants indoors — for pennies on the dollar. No guesswork. No expensive mistakes. Just thriving seedlings, every time.</p>
         <p class="hero-proof">Join the <strong>School of Traditional Skills</strong> community where <strong>90% of members</strong> would recommend us to friends & family.</p>
-        <a href="#purchase" class="cta-button-large">Yes! Show Me How to Save $600 →</a>
+        <a href="#" class="cta-button-large popup-trigger">Yes! Show Me How to Save $600 →</a>
         <p class="hero-guarantee">✓ <strong>30-Day Money-Back Guarantee</strong> • ✓ Instant Access • ✓ Works on Any Budget</p>
     </div>
 </section>
@@ -1617,7 +1617,7 @@
                 <li><strong>Lifetime updates</strong> — any future improvements to the course are yours free</li>
             </ul>
 
-            <a href="#" class="cta-button-large">Start My $600 Savings Today →</a>
+            <a href="#" class="cta-button-large popup-trigger">Start My $600 Savings Today →</a>
             
             <div class="trust-signals">
                 <div class="trust-signal">
@@ -1656,7 +1656,7 @@
             
             <p style="font-size: 22px; font-weight: 700; color: var(--charcoal); margin-top: 25px;">If on Day 30, you decide it isn't what we promised... email us and we'll return your money. No questions asked.</p>
 
-            <a href="#purchase" class="cta-button-large" style="margin-top: 30px;">Start Growing Today - Risk Free →</a>
+            <a href="#" class="cta-button-large popup-trigger" style="margin-top: 30px;">Start Growing Today - Risk Free →</a>
         </div>
     </div>
 </section>
@@ -1835,7 +1835,7 @@
         <p><strong>Option 1:</strong> Keep spending $600+ every season on nursery starts. Keep dealing with limited varieties, mystery soil, and missed planting windows.</p>
         <p><strong>Option 2:</strong> Invest $199 once, learn Rick's proven system, and save $600+ every single season for the rest of your gardening life.</p>
         <p style="font-size: 26px; margin-top: 40px; margin-bottom: 40px;">One payment. Lifetime access. Endless savings.</p>
-        <a href="#purchase" class="cta-button-large">Yes! I'm Ready to Save $600 Every Season →</a>
+        <a href="#" class="cta-button-large popup-trigger">Yes! I'm Ready to Save $600 Every Season →</a>
         <p class="hero-guarantee">✓ 30-Day Money-Back Guarantee • ✓ Join 11,000+ Members • ✓ Instant Access</p>
     </div>
 </section>
@@ -1926,12 +1926,35 @@ function isElementInViewport(el) {
     var hasShownPopup = sessionStorage.getItem('emailPopupShown');
     var popupClosed = sessionStorage.getItem('emailPopupClosed');
     
-    // Don't show if already shown or closed this session
+    // Function to show popup
+    function showPopup() {
+        popup.classList.add('active');
+        sessionStorage.setItem('emailPopupShown', 'true');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+    
+    // Function to hide popup
+    function hidePopup() {
+        popup.classList.remove('active');
+        sessionStorage.setItem('emailPopupClosed', 'true');
+        document.body.style.overflow = ''; // Re-enable scrolling
+    }
+    
+    // ALL CTA BUTTONS TRIGGER POPUP
+    var popupTriggers = document.querySelectorAll('.popup-trigger');
+    popupTriggers.forEach(function(trigger) {
+        trigger.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPopup();
+        });
+    });
+    
+    // Don't show automatic popup if already shown or closed this session
     if (hasShownPopup || popupClosed) {
         return;
     }
     
-    // Show popup after 15 seconds
+    // Show popup after 15 seconds (if not triggered by button first)
     var timeoutId = setTimeout(function() {
         showPopup();
     }, 15000); // 15 seconds
@@ -1958,18 +1981,6 @@ function isElementInViewport(el) {
             }
         }
     });
-    
-    function showPopup() {
-        popup.classList.add('active');
-        sessionStorage.setItem('emailPopupShown', 'true');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
-    }
-    
-    function hidePopup() {
-        popup.classList.remove('active');
-        sessionStorage.setItem('emailPopupClosed', 'true');
-        document.body.style.overflow = ''; // Re-enable scrolling
-    }
     
     // Close button
     closeBtn.addEventListener('click', function() {
@@ -2006,7 +2017,7 @@ function isElementInViewport(el) {
         hidePopup();
         
         // Optional: Show success message
-        alert('🎉 Success! Your 33% discount has been applied. Scroll down to claim your savings!');
+        alert('🎉 Success! Your discount code is applied. Scroll down to complete your purchase!');
         
         // Scroll to purchase section
         document.getElementById('purchase').scrollIntoView({ behavior: 'smooth' });
@@ -2024,3 +2035,4 @@ function isElementInViewport(el) {
 
 </body>
 </html>
+
